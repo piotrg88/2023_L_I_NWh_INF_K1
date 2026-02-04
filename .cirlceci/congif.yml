@@ -3,7 +3,9 @@ version: 2.1
 jobs:
   build-and-test:
     machine:
-      image: ubuntu-2004:202104-01
+      image: ubuntu-2204:current
+    # KLUCZOWE: Wymuszenie klasy 'medium', która jest dostępna w planie darmowym
+      resource_class: medium
     steps:
       - checkout
       - run: make deps
